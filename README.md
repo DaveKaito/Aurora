@@ -1,3 +1,0 @@
-# Aurora
-
-Custom CMS Project
