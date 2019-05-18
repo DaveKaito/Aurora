@@ -1,11 +1,13 @@
 //function for the appearing searchbar after scrolling
 $(window).scroll(function() {
-  var scroll = $(window).scrollTop();
+  if (document.documentElement.clientWidth >= 992) {
+    var scroll = $(window).scrollTop();
 
-  if (scroll >= 350) {
-    $(".searchbar").addClass("visible");
-  } else {
-    $(".searchbar").removeClass("visible");
+    if (scroll >= 350) {
+      $(".searchbar").addClass("visible");
+    } else {
+      $(".searchbar").removeClass("visible");
+    }
   }
 });
 
