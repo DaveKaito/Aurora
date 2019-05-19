@@ -14,7 +14,7 @@
     <link href="../../assets/mdb/css/mdb.min.css" rel="stylesheet" />
     <!-- Your custom styles (optional) -->
     <link href="../../assets/mdb/css/style.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="../../assets/sass/custom.css" />
+    <link rel="stylesheet" href="../../assets/css/custom.css" />
     <style>
     @media (max-width: 992px) {
         .form-control {
@@ -27,7 +27,7 @@
 
 <body class="elegant-color-dark">
     <!-- Navbar -->
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark ">
         <div class="container">
             <!-- Brand -->
             <a class="navbar-brand" href="landing.php" target=""><img src="../../assets/img/aurora_orange.png"

@@ -14,7 +14,8 @@
     <link href="../../assets/mdb/css/mdb.min.css" rel="stylesheet" />
     <!-- Your custom styles (optional) -->
     <link href="../../assets/mdb/css/style.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="../../assets/sass/custom.css" />
+    <link rel="stylesheet" href="../../assets/css/custom.css" />
+
     <style>
     @media (max-width: 992px) {
         .form-control {
@@ -27,8 +28,8 @@
 
 <body class="elegant-color-dark">
     <!-- Navbar -->
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
-        <div class="container">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark">
+        <div class="container ok">
             <!-- Brand -->
             <a class="navbar-brand" href="landing.php" target=""><img src="../../assets/img/aurora_orange.png"
                     height="40" alt="aurora logo" />
@@ -41,9 +42,9 @@
             </button>
 
             <!-- Links -->
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="ok collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Left -->
-                <ul class="navbar-nav mr-auto">
+                <ul class="navbar-nav mr-auto ok">
                     <li class="nav-item ">
                         <a class="nav-link" href="../pages/landing.php">Aurora
 

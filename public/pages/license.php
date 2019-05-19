@@ -7,26 +7,16 @@
 }
 
 .image-container {
-    margin-top: 13vh;
-    max-width: 100%;
-    width: auto;
-    background-image: url('../../assets/img/cross.jpg');
+    background-image: url('../../assets/img/legal_bg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
     background-size: cover;
-    height: 40vh
-}
-
-.desk {
-    height:
-}
-
-.fktxt {
-    margin-top: 10rem !important;
-    margin-bottom: auto !important;
+    height: 50%;
 }
 </style>
 <div class="image-container">
 
-    <div class="flex-center  waves-effect waves-light rgba-black-light">
+    <div class="flex-center rgba-black-light">
         <h1 class="font-weight-bold white-text">Legal Simplicity</h1>
 
     </div>
@@ -48,7 +38,7 @@
             <!-- Grid column -->
             <div class="col-lg-5 mb-lg-0 mb-5">
                 <!--Image-->
-                <img src="../../assets/img/legal1.jpg" alt="snowy mountains from far away"
+                <img src="../../assets/img/legal_img2.jpg" alt="snowy mountains from far away"
                     class="img-fluid rounded z-depth-1">
             </div>
             <!-- Grid column -->
@@ -160,7 +150,8 @@
             <!-- Grid column -->
             <div class="col-lg-5">
                 <!--Image-->
-                <img src="../../assets/img/legal2.jpg" alt="Sample project image" class="img-fluid rounded z-depth-1">
+                <img src="../../assets/img/legal_img1.jpg" alt="Sample project image"
+                    class="img-fluid rounded z-depth-1">
             </div>
             <!-- Grid column -->
 

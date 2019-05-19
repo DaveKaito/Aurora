@@ -1,13 +1,6 @@
 <?php require_once '../../private/initialize.php';?>
 
 <?php include PUBLIC_PATH . '/shared/pub_header_landing.php';?>
-<style>
-@media all and (max-width: 992px) {
-    .finesse {
-        display: block;
-    }
-}
-</style>
 
 <!-- Full Page Intro -->
 <div class="view"

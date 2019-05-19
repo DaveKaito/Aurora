@@ -23,10 +23,6 @@ input[type="file"] {
     border-radius: 20px;
     font-size: 1.5rem !important;
 }
-
-#output_image {
-    max-width: 300px;
-}
 </style>
 <div class="view"
     style="background-image: url('../../assets/img/upload.jpg'); background-repeat: no-repeat; background-size: cover;">
