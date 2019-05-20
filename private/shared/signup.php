@@ -27,9 +27,8 @@ if ($result->num_rows > 0) {
 
         $_SESSION['active'] = 0;
         $_SESSION['logged_in'] = true;
-        $_SESSION['message'] =
-            "The conformation has been sent to $email, please verify by clicking on the link in the message";
-            header("location: ../../public/pages/landing.php");
+        
+            
 
 //send verifiation
         
