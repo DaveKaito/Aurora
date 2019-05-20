@@ -1,6 +1,6 @@
-<?php require_once '../../private/initialize.php';
+<?php require_once '../../private/shared/initialize.php';
 
-include PUBLIC_PATH . '/shared/pub_header.php';
+include '../shared/pub_header_landing.php';
 
 session_start();
 
@@ -8,12 +8,19 @@ session_start();
 <?php
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['login'])) {
-        require 'login.php';
+        require '../../private/shared/login.php';
     } elseif (isset($_POST['signup'])) {
-        require 'signup.php';
+        require '../../private/shared/signup.php';
     }
 }
 ?>
+<script>
+$(document).ready(function() {
+    $("signup").click(function() {
+        $("sign_error").load("../../private/shared/signup.php");
+    });
+});
+</script>
 
 <body>
     <div class="view login_bg"
@@ -42,14 +49,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                     <p class="h4 mb-4">Login</p>
 
                                     <!-- Email -->
-                                    <input type="email" autocomplete="off" name="login" id="defaultLoginFormEmail"
-                                        class="form-control mb-4" placeholder="E-mail">
+                                    <input type="email" autocomplete="off" id="defaultLoginFormEmail"
+                                        class="form-control mb-4" placeholder="E-mail" name="email">
 
                                     <!-- Password -->
-                                    <input type="password" id="defaultLoginFormPassword" class="form-control mb-4"
-                                        placeholder="Password">
+                                    <input type="password" id="defaultLoginFormPassword" name="password"
+                                        class="form-control mb-4" placeholder="Password">
 
-                                    <div class="d-flex justify-content-around">
+                                    <div class="login_error">
 
                                     </div>
 
@@ -64,27 +71,28 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                                     <p class="h4 mb-4">Sign Up</p>
                                     <!-- Username -->
-                                    <input type="text" id="defaultLoginFormUser" class="form-control mb-4"
-                                        placeholder="Username">
+                                    <input type="text" id="defaultLoginFormUser" name="username"
+                                        class="form-control mb-4" placeholder="Username">
 
                                     <!-- Email -->
-                                    <input type="email" value="<?php echo $email; ?>" id="defaultLoginFormEmail"
+                                    <input type="email" id="defaultLoginFormEmail" name="email"
                                         class="form-control mb-4" placeholder="E-mail">
 
                                     <!-- Password -->
-                                    <input type="password" id="defaultLoginFormPassword" class="form-control mb-4"
-                                        placeholder="Password">
+                                    <input type="password" id="defaultLoginFormPassword" name="password"
+                                        class="form-control mb-4" placeholder="Password">
+
+                                    <div class="sign_error">
+
+                                    </div>
 
                                     <!-- Sign in button -->
-                                    <button class="btn btn-orange rounded  btn-block my-4" name="signup">Sign
+                                    <button class="btn btn-orange rounded signup btn-block my-4" name="signup">Sign
                                         Up</button>
                                 </form>
                             </div>
                         </div>
                     </div>
-                    .
-
-
                 </div>
             </div>
 </body>

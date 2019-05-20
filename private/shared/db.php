@@ -1,7 +1,7 @@
 <?php
 
 $host = 'localhost';
-$user = 'Marc';
-$pass = 'test_test';
-$db = 'aurora';
+$user = 'marc';
+$pass = 'test123';
+$db = 'accounts';
 $mysqli = new mysqli($host, $user, $pass, $db) or die($mysqli->error);

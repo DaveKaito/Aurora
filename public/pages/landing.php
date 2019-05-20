@@ -1,6 +1,6 @@
-<?php require_once '../../private/initialize.php';?>
+<?php require_once '../../private/shared/initialize.php';?>
 
-<?php include PUBLIC_PATH . '/shared/pub_header_landing.php';?>
+<?php include '../shared/pub_header_landing.php';?>
 
 <!-- Full Page Intro -->
 <div class="view"
@@ -65,4 +65,4 @@
     </div>
 </main>
 <!--Main layout-->
-<?php include PUBLIC_PATH . '/shared/pub_footer.php';?>
+<?php include '../shared/pub_footer.php';?>

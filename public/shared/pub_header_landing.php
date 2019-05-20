@@ -68,7 +68,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="login.php" class="nav-link border border-light rounded">
+                        <a href="login_page.php" class="nav-link border border-light rounded">
                             <i class="fas fa-sign-in-alt mr-2"></i>
                             <p class="d-none d-lg-inline ">Login</p>
                         </a>

@@ -1,6 +1,6 @@
-<?php require_once '../../private/initialize.php';?>
+<?php require_once '../../private/shared/initialize.php';?>
 
-<?php include PUBLIC_PATH . '/shared/pub_header.php';?>
+<?php include '../shared/pub_header.php';?>
 
 <style>
 input,
