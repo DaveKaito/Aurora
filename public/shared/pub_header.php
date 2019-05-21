@@ -29,7 +29,7 @@
 <body class="elegant-color-dark">
     <!-- Navbar -->
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark">
-        <div class="container ok">
+        <div class="container">
             <!-- Brand -->
             <a class="navbar-brand" href="landing.php" target=""><img src="../../assets/img/aurora_orange.png"
                     height="40" alt="aurora logo" />
@@ -42,9 +42,9 @@
             </button>
 
             <!-- Links -->
-            <div class="ok collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Left -->
-                <ul class="navbar-nav mr-auto ok">
+                <ul class="navbar-nav mr-auto">
                     <li class="nav-item ">
                         <a class="nav-link" href="../pages/landing.php">Aurora
 
@@ -57,7 +57,7 @@
                         <a class="nav-link" href="license.php">License</a>
                     </li>
                 </ul>
-                <form class="fixed mr-auto w-50 ">
+                <form class="fixed main_search mr-auto w-50 ">
                     <input class="form-control " type="text" placeholder="Search" aria-label="Search" />
                 </form>
 

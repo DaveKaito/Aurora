@@ -17,7 +17,6 @@ $result = $mysqli->query("SELECT * FROM users WHERE email='$email'") or die($mys
 //if email exists row > 0
 if ($result->num_rows > 0) {
     $_SESSION['message'] = $message = 'User with this email already exists!';
-    
 } else {
     //insert into db
     $sql = "INSERT INTO users (username, email, password, hash)" . "VALUES ('$username','$email','$password','$hash')";
@@ -27,10 +26,5 @@ if ($result->num_rows > 0) {
 
         $_SESSION['active'] = 0;
         $_SESSION['logged_in'] = true;
-        
-            
-
-//send verifiation
-        
-}
+            }
 }
