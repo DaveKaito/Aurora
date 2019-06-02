@@ -1,3 +1,14 @@
+<?php
+$non_user = '<a href="login.php" class="nav-link border border-light rounded">
+<i class="fas fa-sign-in-alt mr-2"></i>
+<p class="d-none d-lg-inline">Login </p>
+</a>';
+$user = '<a href="logout.php" class="nav-link border border-light rounded">
+<i class="fas fa-sign-out-alt mr-2"></i>
+<p class="d-none d-lg-inline">Logout </p>
+</a>';
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -69,10 +80,11 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="login_page.php" class="nav-link border border-light rounded">
-                            <i class="fas fa-sign-in-alt mr-2"></i>
-                            <p class="d-none d-lg-inline ">Login</p>
-                        </a>
+                        <?php if (isset($_SESSION['user_session'])) {
+    echo $user;
+} else {
+    echo $non_user;
+}?>
                     </li>
                 </ul>
             </div>

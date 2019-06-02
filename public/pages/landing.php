@@ -1,6 +1,6 @@
-<?php require_once '../../private/shared/initialize.php';?>
+<?php require_once '../../private/functions/db.php';?>
 
-<?php include '../shared/pub_header.php';?>\
+<?php include '../shared/pub_header.php';?>
 
 <!-- Full Page Intro -->
 <div class="view"
@@ -82,7 +82,7 @@ $grid.imagesLoaded().progress(function() {
 
 //add 2 css classes for the special searchbar on the main page
 $(".main_search").addClass("finesse searchbar");
-//function for the special searchbar 
+//function for the special searchbar
 function customSearch(x) {
     if (x.matches) {
         $(window).scroll(function() {
