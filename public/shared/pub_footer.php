@@ -1,13 +1,7 @@
     <!--Footer-->
-    <footer class="nofoot page-footer elegant-color-dark text-center font-small mt-4 wow fadeIn">
+    <footer class="nofoot sticky-bottom page-footer elegant-color-dark text-center font-small mt-4 wow fadeIn">
         <!--Call to action-->
-        <div class="pt-4">
-            <a class="btn btn-outline-white" href="https://mdbootstrap.com/docs/jquery/getting-started/download/"
-                target="_blank" role="button">Download MDB
-                <i class="fas fa-download ml-2"></i>
-            </a>
 
-        </div>
         <!--/.Call to action-->
 
         <hr class="my-4" />

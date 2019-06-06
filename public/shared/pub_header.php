@@ -1,12 +1,46 @@
 <?php
-$non_user = '<a href="login.php" class="nav-link border border-light rounded">
-<i class="fas fa-sign-in-alt mr-2"></i>
-<p class="d-none d-lg-inline">Login </p>
-</a>';
-$user = '<a href="logout.php" class="nav-link border border-light rounded">
-<i class="fas fa-sign-out-alt mr-2"></i>
-<p class="d-none d-lg-inline">Logout </p>
-</a>';
+session_start();
+// This variable will only display the login button for users that are not logged in according to the session
+$non_user = '
+<li class="nav-item">
+    <a href="login.php" target="_self" class="nav-link border  border-light rounded">
+        <i class="fas fa-sign-in-alt mr-2"></i>
+        <p class="d-none d-lg-inline">Login </p>
+    </a>
+</li>';
+// This variable will display all buttons for users that are  logged in according to the session
+$user = '
+<li class="nav-item mr-4">
+    <a href="upload.php" class="nav-link border border-light rounded">
+        <i class="fas fa-upload"></i>
+        <p class="d-none d-lg-inline ">Upload</p>
+    </a>
+</li>
+<li class="nav-item mr-4">
+    <a href="../functions/logout.php" target="_self" class="nav-link border border-light rounded">
+        <i class="fas fa-sign-out-alt mr-2"></i>
+        <p class="d-none d-lg-inline">Logout </p>
+    </a>
+</li>
+<li class="nav-item">
+    <a href="profile.php" target="_self" class="nav-link border border-light rounded">
+        <i class="fas fa-user-astronaut"></i>
+    </a>
+</li>';
+// This variable will display all buttons for admins that are  logged in according to the session
+$admin = '
+<li class="nav-item mr-4">
+    <a href="dashboard.php" class="nav-link border border-light rounded">
+        <i class="fas fa-upload"></i>
+        <p class="d-none d-lg-inline ">Dash</p>
+    </a>
+</li>
+<li class="nav-item mr-4">
+    <a href="../functions/logout.php" target="_self" class="nav-link border border-light rounded">
+        <i class="fas fa-sign-out-alt mr-2"></i>
+        <p class="d-none d-lg-inline">Logout </p>
+    </a>
+</li>';
 
 ?>
 <!DOCTYPE html>
@@ -74,18 +108,17 @@ $user = '<a href="logout.php" class="nav-link border border-light rounded">
 
                 <!-- Right -->
                 <ul class="navbar-nav nav-flex-icons">
-                    <li class="nav-item mr-4">
-                        <a href="upload.php" class="nav-link border border-light rounded"><i class="fas fa-upload"></i>
-                            <p class="d-none d-lg-inline ">Upload</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <?php if (isset($_SESSION['user_session'])) {
-    echo $user;
-} else {
-    echo $non_user;
-}?>
-                    </li>
+
+
+                    <?php if (isset($_SESSION['user_id'])) {
+                        echo $user;
+                    } else if(isset($_SESSION['admin_id'])){
+                        echo $admin;
+                    }
+                    else {
+                        echo $non_user;
+                    }?>
+
                 </ul>
             </div>
         </div>

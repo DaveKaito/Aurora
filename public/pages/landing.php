@@ -1,6 +1,7 @@
-<?php require_once '../../private/functions/db.php';?>
-
-<?php include '../shared/pub_header.php';?>
+<?php 
+require_once '../../private/functions/db.php';
+include '../shared/pub_header.php';
+?>
 
 <!-- Full Page Intro -->
 <div class="view"

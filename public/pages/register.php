@@ -48,7 +48,8 @@
         <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
             <div class="container p-5" style="max-width: 600px;">
                 <div class="register_container">
-                    <form class="form-signin mx-auto" method="post" id="register_form">
+                    <form class="form-signin mx-auto" action="../functions/proc_register.php" method="post"
+                        id="register_form">
                         <h2 class="form-signin-heading text-center pb-5">Signup</h2>
                         <div id="error">
                         </div>

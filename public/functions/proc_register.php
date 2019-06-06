@@ -1,4 +1,5 @@
 <?php
+session_start();
 include_once "../../private/functions/db.php";
 if (isset($_POST['btn-save'])) {
     $username = filter_var($_POST['username'], FILTER_SANITIZE_STRING);

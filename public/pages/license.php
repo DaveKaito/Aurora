@@ -1,5 +1,7 @@
-<?php require_once '../../private/shared/initialize.php';
-include '../shared/pub_header.php';?>
+<?php require_once '../../private/functions/db.php';
+include '../shared/pub_header.php';
+?>
+
 <style>
 .license {
     margin-top: 6rem !important;

@@ -1,6 +1,10 @@
-<?php require_once '../../private/shared/initialize.php';?>
-
-<?php include '../shared/pub_header.php';?>
+<?php 
+require_once '../../private/functions/db.php';
+include '../shared/pub_header.php';
+if(!isset($_SESSION['user_id']) || !isset($_SESSION['admin_id'])){
+    header('location: landing.php');
+}
+?>
 
 <style>
 input,

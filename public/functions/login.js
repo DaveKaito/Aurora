@@ -1,4 +1,4 @@
-$("document").ready(function() {
+$("document").ready(function () {
   $("#login-form").validate({
     rules: {
       password: {
@@ -23,18 +23,18 @@ $("document").ready(function() {
       type: "POST",
       url: "../functions/proc_login.php",
       data: data,
-      beforeSend: function() {
+      beforeSend: function () {
         $("#error2").fadeOut();
         $("#login_button").html("  sending ...");
       },
-      success: function(response) {
+      success: function (response) {
         if (response == "ok") {
           $("#login_btn").html(
             '<div><i class="fas fa-spinner"></i>  Signing In ...</div>'
           );
           setTimeout(' window.location.href = "profile.php"; ', 2000);
         } else if (response == "nope") {
-          $("#error2").fadeIn(1000, function() {
+          $("#error2").fadeIn(1000, function () {
             $("#error2").html(
               '<div class="alert alert-danger"><i class="fas fa-skull-crossbones"></i> E-mail or Password wrong! </div>'
             );
@@ -45,7 +45,7 @@ $("document").ready(function() {
             '<div><i class="fas fa-spinner"></i>  Signing In ...</div>'
           );
           setTimeout(
-            ' window.location.href = "../../private/pages/dashboard.php"; ',
+            ' window.location.href = "dashboard.php"; ',
             2000
           );
         }
