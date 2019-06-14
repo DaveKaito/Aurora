@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once "../../private/functions/db.php";
+require_once '../../init.php';
 if (isset($_POST['login_btn'])) {
     $email = trim($_POST['email']);
     $password = trim($_POST['password']);
@@ -17,7 +17,7 @@ if (isset($_POST['login_btn'])) {
         echo "ok";
         $_SESSION['user_id'] = $row['id'];
         $_SESSION['user_name'] = $row['username'];
-        $_SESSION['user_email'] =$row['email'];
+        $_SESSION['user_email'] = $row['email'];
     } else {
         echo "nope";
     }

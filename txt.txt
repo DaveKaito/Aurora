@@ -1,0 +1,9 @@
+<?php echo MDB_ROOT; ?>
+<?php echo ASSETS_ROOT; ?>
+
+<?php
+require_once '../../init.php';
+include SHARED_ROOT . '/pub_header.php';
+?>
+
+<?php include SHARED_ROOT . '/pub_footer.php';?>

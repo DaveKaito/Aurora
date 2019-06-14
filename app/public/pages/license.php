@@ -1,14 +1,11 @@
-<?php require_once '../../private/functions/db.php';
-include '../shared/pub_header.php';
+<?php
+require_once '../../init.php';
+include SHARED_ROOT . '/pub_header.php';
 ?>
 
 <style>
-.license {
-    margin-top: 6rem !important;
-}
-
 .image-container {
-    background-image: url('../../assets/img/legal_bg.jpg');
+    background-image: url('../../../assets/img/legal_bg.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -22,7 +19,7 @@ include '../shared/pub_header.php';
 
     </div>
 </div>
-
+<div class="maincontainer">
 <div class="container">
     <!-- Projects section v.3 -->
     <section class=" license my-5">
@@ -39,7 +36,7 @@ include '../shared/pub_header.php';
             <!-- Grid column -->
             <div class="col-lg-5 mb-lg-0 mb-5">
                 <!--Image-->
-                <img src="../../assets/img/legal_img2.jpg" alt="snowy mountains from far away"
+                <img src="<?php echo ASSETS_ROOT; ?>/img/legal_img2.jpg" alt="snowy mountains from far away"
                     class="img-fluid rounded z-depth-1">
             </div>
             <!-- Grid column -->
@@ -151,7 +148,7 @@ include '../shared/pub_header.php';
             <!-- Grid column -->
             <div class="col-lg-5">
                 <!--Image-->
-                <img src="../../assets/img/legal_img1.jpg" alt="Sample project image"
+                <img src="<?php echo ASSETS_ROOT; ?>/img/legal_img1.jpg" alt="Sample project image"
                     class="img-fluid rounded z-depth-1">
             </div>
             <!-- Grid column -->
@@ -162,6 +159,7 @@ include '../shared/pub_header.php';
     </section>
     <!-- Projects section v.3 -->
 </div>
+</div>
 
 
-<?php include '../shared/pub_footer.php';?>
+<?php include SHARED_ROOT . '/pub_footer.php';?>

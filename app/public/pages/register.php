@@ -1,3 +1,6 @@
+<?php
+require_once '../../init.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,16 +8,16 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>Aurora</title>
+    <title>Register</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" />
     <!-- Bootstrap core CSS -->
-    <link href="../../assets/mdb/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="<?php echo MDB_ROOT; ?>/css/bootstrap.min.css" rel="stylesheet" />
     <!-- Material Design Bootstrap -->
-    <link href="../../assets/mdb/css/mdb.min.css" rel="stylesheet" />
-    <!-- Your custom styles (optional) -->
-    <link href="../../assets/mdb/css/style.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="../../assets/css/custom.css" />
+    <link href="<?php echo MDB_ROOT; ?>/css/mdb.min.css" rel="stylesheet" />
+    <link href="<?php echo MDB_ROOT; ?>/css/style.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="<?php echo ASSETS_ROOT; ?>/css/custom.css" />
+    <link rel="icon" href="<?php echo ASSETS_ROOT; ?>/img/favi.ico" type="image/x-icon" />
 
     <style>
     h2 {
@@ -44,12 +47,11 @@
 
 
     <div class="view"
-        style="background-image: url('../../assets/img/water.jpg'); background-repeat: no-repeat; background-size: cover;">
+        style="background-image: url('../../../assets/img/water.jpg'); background-repeat: no-repeat; background-size: cover;">
         <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
             <div class="container p-5" style="max-width: 600px;">
                 <div class="register_container">
-                    <form class="form-signin mx-auto" action="../functions/proc_register.php" method="post"
-                        id="register_form">
+                    <form class="form-signin p-5 mx-auto" method="post" id="register_form">
                         <h2 class="form-signin-heading text-center pb-5">Signup</h2>
                         <div id="error">
                         </div>
@@ -76,16 +78,19 @@
                             </button>
                         </div>
                     </form>
+                    <a class="text-center" href="login.php">
+                        <p>Already have an Account?</p>
+                    </a>
                 </div>
             </div>
         </div>
 </body>
-<script type="text/javascript" src="../../assets/mdb/js/jquery-3.4.0.min.js"></script>
+<script type="text/javascript" src="<?php echo MDB_ROOT; ?>/js/jquery-3.4.0.min.js"></script>
 <!-- Bootstrap tooltips -->
 
 <!-- Bootstrap core JavaScript -->
-<script type="text/javascript" src="../../assets/mdb/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="<?php echo MDB_ROOT; ?>/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
-<script src="../functions/register.js"></script>
+<script src="<?php echo FUNC_ROOT; ?>/register.js"></script>
 
 </html>

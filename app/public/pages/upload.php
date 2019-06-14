@@ -1,7 +1,7 @@
-<?php 
-require_once '../../private/functions/db.php';
-include '../shared/pub_header.php';
-if(!isset($_SESSION['user_id']) || !isset($_SESSION['admin_id'])){
+<?php
+require_once '../../init.php';
+include SHARED_ROOT . '/pub_header.php';
+if (!isset($_SESSION['user_id']) || !isset($_SESSION['admin_id'])) {
     header('location: landing.php');
 }
 ?>

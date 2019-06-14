@@ -1,11 +1,12 @@
-<?php 
-require_once '../../private/functions/db.php';
-include '../shared/pub_header.php';
+<?php
+require_once '../../init.php';
+include SHARED_ROOT . '/pub_header.php';
+
 ?>
 
 <!-- Full Page Intro -->
 <div class="view"
-    style="background-image: url('../../assets/img/background_plants.png'); background-repeat: no-repeat; background-size: cover;">
+    style="background-image: url('../../../assets/img/background_plants.png'); background-repeat: no-repeat; background-size: cover;">
     <!-- Mask & flexbox options-->
     <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
         <!-- Content -->
@@ -18,8 +19,8 @@ include '../shared/pub_header.php';
                 <input class="form-control" type="text" placeholder="Search" aria-label="Search" />
             </div>
 
-            <a href="login.php" class="btn btn-outline-white btn-lg mt-5">Join us as a contributor <i
-                    class="fas fa-users ml-2"></i>
+            <a href="register.php" class="btn btn-outline-white btn-lg mt-5">Join us as a
+                contributor <i class="fas fa-users ml-2"></i>
             </a>
         </div>
         <!-- Content -->
@@ -29,6 +30,7 @@ include '../shared/pub_header.php';
 <!-- Full Page Intro -->
 
 <!--Main layout-->
+<div class="maincontainer">
 <main>
     <div class="container-fluid mt-5">
         <h1 class="text-white my-4 font-weight-bold">Popular images</h1>
@@ -65,8 +67,9 @@ include '../shared/pub_header.php';
         </div>
     </div>
 </main>
+</div>
 <!--Main layout-->
-<?php include '../shared/pub_footer.php';?>
+<?php include SHARED_ROOT . '/pub_footer.php';?>
 <script>
 //init masonry plugin
 var $grid = $(".grid").masonry({
@@ -94,7 +97,6 @@ function customSearch(x) {
             } else {
                 $(".searchbar").removeClass("visible");
             }
-            console.log("hi dipshit");
         });
     }
 }

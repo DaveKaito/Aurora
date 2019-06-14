@@ -1,9 +1,9 @@
 <?php
-include '../shared/pub_header.php';
-require_once '../../private/functions/db.php';
-if(!isset($_SESSION['user_id'])){
-header("location: login.php");
-} ?>
+require_once '../../init.php';
+include SHARED_ROOT . '/pub_header.php';
+if (!isset($_SESSION['user_id'])) {
+    header("location: login.php");
+}?>
 <style>
 .spacer {
 
@@ -21,9 +21,9 @@ header("location: login.php");
     border-radius: 10px;
 }
 </style>
-<div class="spacer"></div>
-<div class="container profile">
-    <div class="profile_card card elegant-color">
+<div class="maincontainer">
+<div class="container profile p-5 ">
+    <div class="profile_card card elegant-color mt-5">
 
         <!-- Card content -->
         <div class="card-body ">
@@ -47,10 +47,10 @@ header("location: login.php");
         </div>
     </div>
 </div>
-
+</div>
 <!-- Card -->
 <!-- Card -->
 
-<?php 
-include '../shared/pub_footer.php';
+<?php
+include SHARED_ROOT . '/pub_footer.php';
 ?>

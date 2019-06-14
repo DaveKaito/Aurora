@@ -1,4 +1,4 @@
-$("document").ready(function () {
+$("document").ready(function() {
   /* handle form validation */
   $("#register_form").validate({
     rules: {
@@ -8,7 +8,7 @@ $("document").ready(function () {
       },
       password: {
         required: true,
-        minlength: 03,
+        minlength: 8,
         maxlength: 15
       },
       cpassword: {
@@ -39,23 +39,21 @@ $("document").ready(function () {
     var data = $("#register_form").serialize();
     $.ajax({
       type: "POST",
-      url: "../functions/proc_register.php",
+      url: "../../private/functions/proc_register.php",
       data: data,
-      beforeSend: function () {
+      beforeSend: function() {
         $(".alert").fadeOut();
         $("#btn-submit").html(
           '<i class="fas fa-star-christmas fa-spin"></i> Sending ...'
         );
       },
-      success: function (response) {
+      success: function(response) {
         if (response == 1) {
-          $("#error").fadeIn(1000, function () {
+          $("#error").fadeIn(1000, function() {
             $("#error").html(
               '<div class="alert alert-danger">   <span class="glyphicon glyphicon-info-sign"></span> User with this e-mail already exists !</div>'
             );
-            $("#btn-submit").html(
-              'Create Account'
-            );
+            $("#btn-submit").html("Create Account");
           });
         } else if (response == "registered") {
           $("#btn-submit").html(
@@ -63,13 +61,11 @@ $("document").ready(function () {
           );
           setTimeout(' window.location.href = "login.php"; ', 2000);
         } else {
-          $("#error").fadeIn(1000, function () {
+          $("#error").fadeIn(1000, function() {
             $("#error").html(
               '<div class="alert alert-danger"><i class="fas fa-skull-crossbones"></i> ERROR !</div>'
             );
-            $("#btn-submit").html(
-              ' Create Account'
-            );
+            $("#btn-submit").html(" Create Account");
           });
         }
       }
