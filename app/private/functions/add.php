@@ -1,47 +1,25 @@
 <?php
+ob_start();
+session_start();
 require_once '../../init.php';
+
 include SHARED_ROOT . '/pub_header.php';
-if (isset($_SESSION['admin_id'])) {
-    // check if admin
-} else {
-    //send back to landing
-    header('location:' . PAGES_ROOT . '/index.php');
-}
-$title = $creator = $bdesc = "";
-if (isset($_POST['add_btn'])) {
-    if (!empty($_POST['title']) && !empty($_POST['creator']) && !empty($_POST['bdesc']) && !empty($_POST['img']) && !empty($_POST['content'])) {
-        $title = filter_var($_POST['title'], FILTER_SANITIZE_STRING);
-        $creator = filter_var($_POST['creator'], FILTER_SANITIZE_STRING);
-        $bdesc = filter_var($_POST['bdesc'], FILTER_SANITIZE_STRING);
-        $imglink = filter_var($_POST['img'], FILTER_SANITIZE_URL);
-        $tag = $_POST['tag'];
-        $date = date("D-m-Y H:i");
-        $sql = "INSERT INTO blog(`id`, `title`, `creator`, `bdesc`,`imglink`,`tag`, `date`) VALUES (NULL, '$title', '$creator','$bdesc','$imglink','$tag','$date')";
-        mysqli_query($conn, $sql) or die("database error:" . mysqli_error($conn));
-        header('location:' . PRIV_ROOT . '/dashboard.php');
-    } else {
-        $bformError = '<div class="alert alert-warning" role="alert">Please make sure to fill out all the fields!</div>';
-    }
-}
+include SHARED_ROOT . '/links.php';
+include SHARED_ROOT . '/nav.php';
 
-if (isset($_POST['add_btn'])) {
-    $sql = "SELECT title FROM blog";
-    $result = mysqli_query($conn, $sql) or die("database error:" . mysqli_error($conn));
-    while ($row = mysqli_fetch_assoc($result)) {
+/*This is my add script, where i check the posted data from below and add the important stuff to my db.
+6 Variables get added to the db so i can use them on other files.
+The content itself will not be added to the db, because i used a WYSIWYG editor.
+I wanted to make "authentic" blogposts possible, which is why i did not include them in the sql query. Based on what i've read it is not really common to post blog posts to a db. IDK i just thought it would be better to do it this way.
 
-// Will store the filename for fopen()
-        $content = $_POST['content'];
-// File name structure, taken from question context
-        $filetitle = $row['title'];
+OK so i basically just take all the content that is written in my editor and save it to a txt file. The txtfile inherits the title that is given in the form and will be saved as example.txt.
 
-// If the file does not exist, store it in $filename for writing
-        if (!file_exists($filetitle)) {
-            $fd = fopen("../articles/" . $filetitle . ".txt", "w");
-            fwrite($fd, $content); // Change string literal to the name to write to file from either input or string literal
-            fclose($fd); // Free the file descriptor
-        }
-    }
-}
+I needed to attach atleast something that would allow me to find the blog post based on a variable that is stored in the db.
+
+ */
+
+
+
 
 ?>
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jodit/3.1.92/jodit.min.css">
@@ -58,7 +36,44 @@ label {
         <form class="blogform p-5" name="blogpost" method="post" action="add.php">
 
             <h1 class="mb-4 text-center">Add Content</h1>
-            <?php echo $bformError; ?>
+            <?php
+if (!empty($_POST)) {
+    if (!empty($_POST['title']) && !empty($_POST['creator']) &&! empty($_POST['bdesc']) && !empty($_POST['img']) && !empty($_POST['content'])) {
+        $title = filter_var($_POST['title'], FILTER_SANITIZE_STRING);
+        $ctitle = str_replace(' ', '_', $title);
+        $creator = filter_var($_POST['creator'], FILTER_SANITIZE_STRING);
+        $bdesc = filter_var($_POST['bdesc'], FILTER_SANITIZE_STRING);
+        $imglink = filter_var($_POST['img'], FILTER_SANITIZE_URL);
+        $tag = $_POST['tag'];
+        $date = date("D-m-Y H:i");
+        $sql = "INSERT INTO blog(`id`, `title`, `creator`, `bdesc`,`imglink`,`tag`, `date`) VALUES (NULL, '$ctitle', '$creator','$bdesc','$imglink','$tag','$date')";
+        mysqli_query($conn, $sql); 
+        $err = mysqli_error($conn);
+        if ($err){
+            echo '<div class="berror"><div class="alert alert-danger">Blog entry with this title already exsists!</div></div>';
+        }
+    }else{
+    echo '<div class="berror"><div class="alert alert-warning">Please make sure to fill out all the fields!</div></div>';
+}
+}
+if (!empty($_POST)) {
+    $sql = "SELECT title FROM blog";
+    $result = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_assoc($result); 
+ $content = $_POST['content'];
+    $filetitle = $row['title'];
+    if (!file_exists($filetitle)) {
+         $fd = fopen("../articles/" . $filetitle . ".txt", "w");
+        fwrite($fd, $content);
+        fclose($fd);
+        header('location:../dashboard.php');
+        exit();
+        }else{
+        echo '<div class="berror"><div class="alert alert-warning">Something went wrong the file could not be saved!</div></div>';
+    }
+    }
+ob_end_flush();
+?>
             <label for="title">Title</label>
             <input type="text" name="title" class="form-control mb-4" placeholder="Title">
 

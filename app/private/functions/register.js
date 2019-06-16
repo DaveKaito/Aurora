@@ -1,3 +1,5 @@
+//This file is basically the same, except it has some more restrictions. I explained alot about this process in login.js
+
 $("document").ready(function() {
   /* handle form validation */
   $("#register_form").validate({
@@ -9,7 +11,7 @@ $("document").ready(function() {
       password: {
         required: true,
         minlength: 8,
-        maxlength: 15
+        maxlength: 30
       },
       cpassword: {
         required: true,
@@ -44,26 +46,29 @@ $("document").ready(function() {
       beforeSend: function() {
         $(".alert").fadeOut();
         $("#btn-submit").html(
-          '<i class="fas fa-star-christmas fa-spin"></i> Sending ...'
+          '<div><i class="fas fa-spinner fa-spin mr-2"></i>Signing Up ...</div>'
         );
       },
       success: function(response) {
-        if (response == 1) {
-          $("#error").fadeIn(1000, function() {
-            $("#error").html(
-              '<div class="alert alert-danger">   <span class="glyphicon glyphicon-info-sign"></span> User with this e-mail already exists !</div>'
+        if (response == "err") {
+          $("#msg").fadeIn(1000, function() {
+            $("#msg").html(
+              '<div class="alert aj alert-warning"><i class="fas fa-exclamation-triangle"></i> User with this e-mail already exists !</div>'
             );
             $("#btn-submit").html("Create Account");
           });
         } else if (response == "registered") {
           $("#btn-submit").html(
-            '<i class="fas fa-star-christmas fa-spin"></i>   Signing Up ...'
+            '<div><i class="fas fa-spinner fa-spin mr-2"></i>Signing Up ...</div>'
           );
-          setTimeout(' window.location.href = "login.php"; ', 2000);
+          $("#msg").html(
+            '<div class="alert alert-success"> You have successfully registered! Please login on the next page </div>'
+          );
+          setTimeout(' window.location.href = "login.php"; ', 5000);
         } else {
-          $("#error").fadeIn(1000, function() {
-            $("#error").html(
-              '<div class="alert alert-danger"><i class="fas fa-skull-crossbones"></i> ERROR !</div>'
+          $("#msg").fadeIn(1000, function() {
+            $("#msg").html(
+              '<div class="alert aj alert-danger"><i class="fas fa-skull-crossbones"></i> ERROR !</div>'
             );
             $("#btn-submit").html(" Create Account");
           });

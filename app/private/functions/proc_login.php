@@ -10,15 +10,13 @@ if (isset($_POST['login_btn'])) {
     $pw_verify = password_verify($password, $row['password']);
     if (($pw_verify) && ($row['is_admin'] === '1')) {
         echo "admin";
-        $_SESSION['admin_id'] = $row['id'];
-        $_SESSION['admin_username'] = $row['username'];
         $_SESSION['is_admin'] = $row['is_admin'];
-    } elseif ($pw_verify) {
-        echo "ok";
-        $_SESSION['user_id'] = $row['id'];
+    } elseif (($pw_verify) && ($row['is_user'] === '1')) {
+        $_SESSION['is_user'] = $row['is_user'];
         $_SESSION['user_name'] = $row['username'];
         $_SESSION['user_email'] = $row['email'];
+        echo "user";
     } else {
-        echo "nope";
+        echo "err";
     }
 }

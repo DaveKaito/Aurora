@@ -1,0 +1,8 @@
+test all the browsers 
+maybe make index in app folder 
+write a readme 
+make a presentation 
+clean up the code 
+explain the code better 
+minify maybe? 
+check the pictures again size etc

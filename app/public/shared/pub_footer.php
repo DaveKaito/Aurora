@@ -1,5 +1,6 @@
     <!--Footer-->
-    <script type="text/javascript" src="<?php echo MDB_ROOT; ?>/js/jquery-3.4.0.min.js"></script>
+
+
     <!-- Bootstrap tooltips -->
     <script type="text/javascript" src="<?php echo MDB_ROOT; ?>/js/popper.min.js"></script>
     <!-- Bootstrap core JavaScript -->
@@ -8,9 +9,12 @@
     <script type="text/javascript" src="<?php echo MDB_ROOT; ?>/js/mdb.min.js"></script>
     <!-- MDBootstrap Masonry  -->
     <script type="text/javascript" src="<?php echo MDB_ROOT; ?>/js/masonry.pkgd.min.js"></script>
-    <script type="text/javascript" src="<?php echo MDB_ROOT; ?>/js/bs-custom-file-input.js"></script>
 
-    <script type="text/javascript" src="<?php echo MDB_ROOT; ?>/js/imagesloaded.pkgd.min.js"></script>
+    <script type="text/javascript" src="<?php echo MDB_ROOT; ?>/js/imagesloaded.pkgd.min.js">
+    </script>
+    
+    <script src="<?php echo FUNC_ROOT; ?>/index.js"></script>
+
     </body>
     <footer class="page-footer elegant-color-dark text-center font-small mt-4">
         <hr class="my-4" />

@@ -1,6 +1,9 @@
 <?php
+session_start();
 require_once '../../init.php';
 include SHARED_ROOT . '/pub_header.php';
+include SHARED_ROOT . '/links.php';
+include SHARED_ROOT . '/nav.php';
 
 $sql = "SELECT * FROM blog ORDER by id ";
 $result = mysqli_query($conn, $sql) or die("database error:" . mysqli_error($conn));
@@ -16,13 +19,7 @@ if ($row['tag'] = 'Food') {
     $tag = '<h6 class="blue-text font-weight-bold mb-3"><i class="fas fa-camera-retro pr-2"></i></i>Photography</h6>';
 }
 ?>
-<style>
-h2,
-h3,
-p {
-    color: white;
-}
-</style>
+
 <div class="maincontainer">
     <div class="container p-5">
         <!-- Section: Blog v.1 -->
@@ -34,7 +31,7 @@ p {
             <?php else: ?>
             <?php foreach ($rows as $row): ?>
             <!-- Grid row -->
-            <div class="row pb-5">
+            <div class="row pb-5 justify-content-center">
 
                 <!-- Grid column -->
                 <div class="col-lg-5">
@@ -49,7 +46,7 @@ p {
                 <!-- Grid column -->
 
                 <!-- Grid column -->
-                <div class="col-lg-7">
+                <div class="col-lg-3">
 
                     <!-- Category -->
                     <?php echo $tag; ?>

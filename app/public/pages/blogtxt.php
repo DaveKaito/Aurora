@@ -1,6 +1,9 @@
 <?php
+session_start();
 require_once '../../init.php';
 include SHARED_ROOT . '/pub_header.php';
+include SHARED_ROOT . '/links.php';
+include SHARED_ROOT . '/nav.php';
 $did = $_GET['id'];
 if (isset($_GET['id'])) {
     $sql = "SELECT * FROM blog WHERE id = '$did' ";
@@ -29,28 +32,7 @@ if (isset($_GET['id'])) {
 }
 ?>
 <!--Main Layout-->
-<style>
-.cardimg {
-    z-index: -999;
-}
 
-.cardtitle {
-    z-index: 99;
-    position: relative;
-    top: -30px;
-}
-
-h2,
-p {
-    color: white;
-}
-
-@media (max-width: 992px) {
-    .cardcon {
-        height: 200px !important;
-    }
-}
-</style>
 
 <div class="maincontainer">
     <div class="container p-2">
@@ -73,8 +55,7 @@ p {
                 <!--Post data-->
 
                 <div class="card-body w-75 mx-auto text-center elegant-color mb-5 cardtitle rounded z-depth-2">
-                    <h2 class="orange-text"><a><strong>
-                                <?php echo e($row['title']) ?></strong></a></h2>
+                    <h2 class="orange-text"><a><strong><?php echo e($row['title']) ?></strong></a></h2>
                     <p>Written by <a><?php echo e($row['creator']) ?></a> , <?php echo e($row['date']) ?></p>
                 </div>
                 <!--Excerpt-->
@@ -82,8 +63,7 @@ p {
 
                     <?php echo $output; ?>
 
-                    <div class="mt-4 d-flex justify-content-end">
-                        <?php echo $tag; ?>
+                    <div class="mt-4 d-flex justify-content-end"><?php echo $tag; ?>
                     </div>
 
                 </div>

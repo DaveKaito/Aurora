@@ -1,6 +1,6 @@
 !!!THIS DOES NOT WORK AND IS NOT INCLUDED/LINKED IN ANY WAY!!!
-i wanted to make the pages editable, but with this configuration including a WYSIWYG-Editor it seems impossible 
-:( 
+i wanted to make the pages editable, but with this configuration including a WYSIWYG-Editor it seems impossible
+:(
 <?php
 require_once '../../init.php';
 include SHARED_ROOT . '/pub_header.php';
@@ -8,7 +8,8 @@ if (isset($_SESSION['admin_id'])) {
     // check if admin
 } else {
     //send back to landing
-    header('location:' . PAGES_ROOT . '/index.php');
+    header('location:' . PAGES_ROOT . '/start.php');
+    exit();
 }
 function readContent($contentFile)
 {
@@ -37,6 +38,7 @@ if (!empty($_POST)) {
         writeContent($uBlog);
     }
     header('location:' . PRIV_ROOT . '/dashboard.php');
+    exit();
 }
 
 ?>
