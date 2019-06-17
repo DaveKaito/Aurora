@@ -78,6 +78,14 @@ html {
 }
 
 /*start.php*/
+@media (max-width: 576px) {
+  .content-details,
+  .content-image,
+  .content-overlay,
+  .fadeIn-bottom {
+    display: none;
+  }
+}
 .content .content-overlay {
   background: rgba(0, 0, 0, 0.7);
   position: absolute;
@@ -148,6 +156,7 @@ h3,
 p,
 th,
 h1,
+h6,
 td,
 i,
 a,
@@ -204,10 +213,6 @@ label.error {
 }
 
 /* profile */
-.spacer {
-  height: 20%;
-}
-
 .profile_card {
   border-radius: 10px;
 }
@@ -257,7 +262,7 @@ input[type="file"] {
   color: white;
 }
 .up {
-  min-height: calc(100vh - 179px) !important;
+  min-height: calc(100vh - 91px) !important;
 }
 
 /* dashboard*/

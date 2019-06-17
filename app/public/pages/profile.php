@@ -7,8 +7,6 @@ include SHARED_ROOT . '/nav.php';
 if (empty($_SESSION['is_user'])) {
    header("location: login.php");
     exit(); 
-} else {
- 
 }?>
 
 <div class="maincontainer">
@@ -19,12 +17,12 @@ if (empty($_SESSION['is_user'])) {
             <div class="card-body ">
 
                 <!-- Title -->
-                <h4 class="card-title orange-text pt-5 text-center">
-                    <strong><?php echo $_SESSION['user_name'] ?></strong>
+                <h4 class="card-title orange-text pt-3 text-center">
+                    <strong>Hi <?php echo $_SESSION['user_name'] ?> !</strong>
                 </h4>
                 <!-- Subtitle -->
-                <div class="card-body info white mt-4">
-                    <h6 class="font-weight-bold  py-2">User Information</h6>
+                <div class="card-body elegant-color-dark info white mt-4">
+                    <h6 class="font-weight-bold py-2">User Information</h6>
                     <!-- Text -->
                     <p class="card-text">Username: <?php echo $_SESSION['user_name']; ?>
                     </p>

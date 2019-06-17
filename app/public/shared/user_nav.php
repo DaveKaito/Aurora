@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <body class="elegant-color-dark">
     <!-- Navbar -->
     <div class="loader">
@@ -38,8 +40,6 @@
                 <!-- Right -->
                 <ul class="navbar-nav nav-flex-icons">
                     <!-- echoing the different navigations depending on session -->
-
-                    <?php if (isset($_SESSION['is_user'])) : ?>
                     <li class="nav-item mr-4">
                         <a href="<?php echo PAGES_ROOT; ?>/upload.php" class="nav-link border border-light rounded">
                             <i class="fas fa-upload"></i>
@@ -57,36 +57,6 @@
                             <i class="fas fa-user-astronaut"></i>
                         </a>
                     </li>
-                    <?php ?>
-                    <?php elseif (isset($_SESSION['is_admin'])) : ?>
-                    <li class="nav-item mr-4">
-                        <a href="<?php echo PAGES_ROOT; ?>/upload.php" class="nav-link border border-light rounded">
-                            <i class="fas fa-upload"></i>
-                            <p class="d-none d-xl-inline ">Upload</p>
-                        </a>
-                    </li>
-                    <li class="nav-item mr-4">
-                        <a href="<?php echo PRIV_ROOT; ?>/dashboard.php" class="nav-link border border-light rounded">
-                            <i class="fas fa-tachometer-alt"></i>
-                            <p class="d-none d-xl-inline ">Dash</p>
-                        </a>
-                    </li>
-                    <li class="nav-item mr-4">
-                        <a href="<?php echo FUNC_ROOT; ?>/logout.php" class="nav-link border border-light rounded">
-                            <i class="fas fa-sign-out-alt"></i>
-                            <p class="d-none d-xl-inline">Logout </p>
-                        </a>
-                    </li>
-                    <?php ?>
-                    <?php else : ?>
-                    <li class="nav-item">
-                        <a href="<?php echo PAGES_ROOT; ?>/register.php" target="_self"
-                            class="nav-link border  border-light rounded">
-                            <i class="fas fa-sign-in-alt mr-2"></i>
-                            <p class="d-none d-xl-inline">Register </p>
-                        </a>
-                    </li>
-                    <?php endif; ?>
                 </ul>
             </div>
         </div>

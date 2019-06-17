@@ -1,6 +1,6 @@
 //This file is basically the same, except it has some more restrictions. I explained alot about this process in login.js
 
-$("document").ready(function() {
+$("document").ready(function () {
   /* handle form validation */
   $("#register_form").validate({
     rules: {
@@ -43,17 +43,17 @@ $("document").ready(function() {
       type: "POST",
       url: "../../private/functions/proc_register.php",
       data: data,
-      beforeSend: function() {
+      beforeSend: function () {
         $(".alert").fadeOut();
         $("#btn-submit").html(
           '<div><i class="fas fa-spinner fa-spin mr-2"></i>Signing Up ...</div>'
         );
       },
-      success: function(response) {
+      success: function (response) {
         if (response == "err") {
-          $("#msg").fadeIn(1000, function() {
+          $("#msg").fadeIn(1000, function () {
             $("#msg").html(
-              '<div class="alert aj alert-warning"><i class="fas fa-exclamation-triangle"></i> User with this e-mail already exists !</div>'
+              '<div class="alert aj alert-warning"><i class="fas orange-text fa-exclamation-triangle"></i> User with this e-mail already exists !</div>'
             );
             $("#btn-submit").html("Create Account");
           });
@@ -66,9 +66,9 @@ $("document").ready(function() {
           );
           setTimeout(' window.location.href = "login.php"; ', 5000);
         } else {
-          $("#msg").fadeIn(1000, function() {
+          $("#msg").fadeIn(1000, function () {
             $("#msg").html(
-              '<div class="alert aj alert-danger"><i class="fas fa-skull-crossbones"></i> ERROR !</div>'
+              '<div class="alert aj alert-danger"><i class="fas fa-skull-crossbones red-text"></i> ERROR !</div>'
             );
             $("#btn-submit").html(" Create Account");
           });

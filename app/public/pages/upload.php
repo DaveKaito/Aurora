@@ -8,7 +8,8 @@ include SHARED_ROOT . '/nav.php';
 ?>
 <div class="up d-flex flex-column align-items-center justify-content-center"
     style="background-image: url('../../../assets/img/upload.jpg'); background-repeat: no-repeat; background-size: cover;">
-<?php if (empty($_SESSION['is_admin'])) {
+    <?php 
+    if (empty($_SESSION)) {
 header('location:'. PAGES_ROOT . '/pages/start.php');
     exit();
 } 
@@ -40,7 +41,7 @@ if (isset($_POST["submit"])) {
         echo "<span id='alert' class='alert alert-success mb-5'>File has been uploaded! :D</span>";
     }
 }
-?> 
+?>
     <form autocomplete="off" method="post" enctype="multipart/form-data">
 
         <div class="file-upload mt-5">

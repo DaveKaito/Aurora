@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once '../../init.php';
 include SHARED_ROOT . '/pub_header.php';
 include SHARED_ROOT . '/links.php';

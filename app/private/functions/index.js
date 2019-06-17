@@ -6,16 +6,16 @@ var $grid = $(".grid").masonry({
 });
 
 // layout Masonry after each image loads
-$grid.imagesLoaded().progress(function() {
+$grid.imagesLoaded().progress(function () {
   $grid.masonry();
 });
 
 //add 2 css classes for the special searchbar on the main page
 $(".main_search").addClass("finesse searchbar");
 //function for the special searchbar
-function customSearch(x) {
+function customSearchX(x) {
   if (x.matches) {
-    $(window).scroll(function() {
+    $(window).scroll(function () {
       var scroll = $(window).scrollTop();
 
       if (scroll >= 350) {

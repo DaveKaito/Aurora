@@ -4,6 +4,7 @@ require_once '../../init.php';
 include SHARED_ROOT . '/pub_header.php';
 include SHARED_ROOT . '/links.php';
 include SHARED_ROOT . '/nav.php';
+
 ?>
 <div class="view"
     style="background-image: url('../../../assets/img/background_plants.webp'); background-repeat: no-repeat; background-size: cover;">
@@ -33,13 +34,13 @@ include SHARED_ROOT . '/nav.php';
 <div class="maincontainer">
     <main>
         <div class="container-fluid mt-5">
-            <h1 class="text-white my-4 font-weight-bold">Popular images</h1>
+            <h1 class="text-white text-center my-4 font-weight-bold">New Uploads</h1>
 
             <div class="grid">
                 <div class="grid-sizer">
                     <?php
 foreach (glob("../pictures/" . "*.{jpg,webp}", GLOB_BRACE) as $image) {echo '<div class="grid-item content"><div class="content-overlay"></div><img src="' . $image . '" /><div class="content-details fadeIn-bottom">
-    <a href="../pictures/' . $image . '"class="btn-lg rounded-circle btn-orange transparent-text" download><i class="fas fa-arrow-down"></i></a>
+    <a href="../pictures/' . $image . '"class=" btn-lg p-5" download ><i class="fas fa-arrow-down fa-3x tect-orange"></i></a>
       </div></div>';}
 ?>
                 </div>
