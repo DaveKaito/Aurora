@@ -1,4 +1,6 @@
-#Project Aurora Marc Ruckstuhl WBD 318
+# Project Aurora Marc Ruckstuhl WBD 318
+
+#### This is a project i made while studying at SAE Zurich. We had to make a small CMS for our assignment, and this is my result.
 
 ## Database Design
 
@@ -27,19 +29,19 @@
 
 ### Blog
 
-####`id` int(11) NOT NULL,
+#### `id` int(11) NOT NULL,
 
-####`title` varchar(45) COLLATE latin1_bin NOT NULL,
+#### `title` varchar(45) COLLATE latin1_bin NOT NULL,
 
-####`creator` varchar(45) COLLATE latin1_bin NOT NULL,
+#### `creator` varchar(45) COLLATE latin1_bin NOT NULL,
 
-####`date` varchar(45) COLLATE latin1_bin NOT NULL,
+#### `date` varchar(45) COLLATE latin1_bin NOT NULL,
 
-####`bdesc` text COLLATE latin1_bin NOT NULL,
+#### `bdesc` text COLLATE latin1_bin NOT NULL,
 
-####`tag` tinytext COLLATE latin1_bin NOT NULL,
+#### `tag` tinytext COLLATE latin1_bin NOT NULL,
 
-####`imglink` mediumtext COLLATE latin1_bin NOT NULL
+#### `imglink` mediumtext COLLATE latin1_bin NOT NULL
 
 | "id"  | "title"    | "creator" | "date"                | "bdesc" | "tag"         | "imglink"                                                                                         |
 | ----- | ---------- | --------- | --------------------- | ------- | ------------- | ------------------------------------------------------------------------------------------------- |
