@@ -39,7 +39,7 @@ include SHARED_ROOT . '/nav.php';
             <div class="grid">
                 <div class="grid-sizer">
                     <?php
-foreach (glob("../pictures/" . "*.{jpg,webp}", GLOB_BRACE) as $image) {echo '<div class="grid-item content"><div class="content-overlay"></div><img src="' . $image . '" /><div class="content-details fadeIn-bottom">
+foreach (glob("../pictures/" . "*.{jpg,webp,png,jpeg}", GLOB_BRACE) as $image) {echo '<div class="grid-item content"><div class="content-overlay"></div><img src="' . $image . '" /><div class="content-details fadeIn-bottom">
     <a href="../pictures/' . $image . '"class=" btn-lg p-5" download ><i class="fas fa-arrow-down fa-3x tect-orange"></i></a>
       </div></div>';}
 ?>
@@ -49,4 +49,27 @@ foreach (glob("../pictures/" . "*.{jpg,webp}", GLOB_BRACE) as $image) {echo '<di
     </main>
 </div>
 <!--Main layout-->
+<script>
+//add 2 css classes for the special searchbar on the main page
+$(".main_search").addClass("finesse searchbar");
+//function for the special searchbar
+function customSearch(x) {
+    if (x.matches) {
+        $(window).scroll(function() {
+            var scroll = $(window).scrollTop();
+
+            if (scroll >= 350) {
+                $(".searchbar").addClass("visible");
+            } else {
+                $(".searchbar").removeClass("visible");
+            }
+        });
+    }
+}
+//i wanted to make sure that the searchbar is always visible on mobile
+// and does not appear after scrolling like on the desktop
+var x = window.matchMedia("(min-width: 992px)");
+customSearch(x);
+x.addListener(customSearch);
+</script>
 <?php include SHARED_ROOT . '/pub_footer.php';?>

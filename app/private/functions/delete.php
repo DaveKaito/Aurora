@@ -9,7 +9,7 @@ and in the second step i delete the db stuff
  */
 $did = $_GET['id'];
 if (isset($_GET['id'])) {
-    $sql = "SELECT title FROM blog WHERE title = '$did'";
+    $sql = "SELECT title FROM blog WHERE id = '$did'";
     $result = mysqli_query($conn, $sql) or die("database error:" . mysqli_error($conn));
     $row = mysqli_fetch_assoc($result);
     $title = $row['title'];

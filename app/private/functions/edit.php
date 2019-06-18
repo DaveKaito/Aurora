@@ -8,7 +8,7 @@ if (isset($_SESSION['admin_id'])) {
     // check if admin
 } else {
     //send back to landing
-    header('location:' . PAGES_ROOT . '/start.php');
+    header('location:' . PAGES_ROOT . '/index.php');
     exit();
 }
 function readContent($contentFile)

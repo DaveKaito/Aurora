@@ -5,7 +5,7 @@ include SHARED_ROOT . '/pub_header.php';
 include SHARED_ROOT . '/links.php';
 include SHARED_ROOT . '/nav.php';
 if (empty($_SESSION['is_admin'])) {
-    header('location: ../public/pages/start.php');
+    header('location: ../public/pages/index.php');
     exit();
 } else {
 $sql = "SELECT * FROM blog ORDER by id ";

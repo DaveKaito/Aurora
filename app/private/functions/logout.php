@@ -9,5 +9,5 @@ if (ini_get("session.use_cookies")) {
     );
 }
 session_destroy();
-header('location:' . HOME_PATH . '/start.php');
+header('location:' . HOME_PATH . '/index.php');
 exit();

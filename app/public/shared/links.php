@@ -7,6 +7,7 @@
 <link href="<?php echo ASSETS_ROOT; ?>/css/custom.css" rel="stylesheet" />
 <link rel="icon" href="<?php echo ASSETS_ROOT; ?>/img/favi.ico" type="image/x-icon" />
 <script type="text/javascript" src="<?php echo MDB_ROOT; ?>/js/jquery-3.4.0.min.js"></script>
+<script src="https://cdn.ckeditor.com/4.11.4/standard/ckeditor.js"></script>
 <script>
 $(window).on('load', function() {
     $('.loader').fadeOut();

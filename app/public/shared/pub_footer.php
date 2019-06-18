@@ -32,8 +32,4 @@
     </footer>
     <!--/.Footer-->
 
-    <!-- JQuery -->
-
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum eos quaerat tempora sit dolores cumque voluptates ipsa ratione ab recusandae voluptate tempore autem doloribus, perspiciatis natus, quis incidunt possimus? Quae quia voluptates, atque eaque enim eveniet aperiam et cumque, rerum vero vitae amet laboriosam perferendis accusantium odio debitis iusto nostrum quo asperiores eum. Eos deleniti maiores ullam totam harum nulla, placeat culpa! Dolore debitis incidunt voluptate perspiciatis magni officia, explicabo deleniti, iure error omnis illum quis atque ea expedita itaque nisi soluta consequatur nihil! Voluptatem, ullam facilis deleniti consectetur maxime natus, ab aliquid repellat aut beatae nesciunt praesentium sed? Perferendis reprehenderit, porro nam aspernatur ab error officiis, ipsum non exercitationem in nulla ut itaque unde eum adipisci velit modi debitis illum odio ex fuga aliquam? Autem explicabo vero, eveniet enim nemo animi dolorum officia reiciendis, illum excepturi natus numquam magni dolore accusantium quod. Autem, distinctio. Optio quos aspernatur sint sunt eligendi sapiente nisi aliquam mollitia accusamus natus. Nulla hic suscipit similique inventore voluptatum ea. Architecto amet beatae accusantium, delectus, tenetur unde, aliquid et ullam id blanditiis sit placeat cupiditate quae? Rerum iure nihil facere fugiat porro quo perferendis expedita. Molestiae vero mollitia magnam consequuntur corporis ullam quam blanditiis expedita amet.
-
     </html>

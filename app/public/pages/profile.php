@@ -30,8 +30,8 @@ if (empty($_SESSION['is_user'])) {
                     </p>
                 </div>
                 <div class="d-flex justify-content-center mt-5">
-                    <button class="btn btn-orange"><i class="fas fa-magic mr-3"></i> Change Password</button>
-                    <button class="btn btn-orange "><i class="fas fa-magic mr-3"></i> Edit Profile Info</button>
+                    <button class="btn btn-orange disabled"><i class="fas fa-magic mr-3"></i> Change Password</button>
+                    <button class="btn btn-orange disabled "><i class="fas fa-magic mr-3"></i> Edit Profile Info</button>
                 </div>
             </div>
         </div>

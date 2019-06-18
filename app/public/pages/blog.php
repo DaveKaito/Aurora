@@ -5,7 +5,7 @@ include SHARED_ROOT . '/pub_header.php';
 include SHARED_ROOT . '/links.php';
 include SHARED_ROOT . '/nav.php';
 
-$sql = "SELECT * FROM blog ORDER by id ";
+$sql = "SELECT * FROM blog ORDER by date DESC ";
 $result = mysqli_query($conn, $sql) or die("database error:" . mysqli_error($conn));
 $rows = array();
 while ($row = mysqli_fetch_assoc($result)) {
@@ -13,11 +13,12 @@ while ($row = mysqli_fetch_assoc($result)) {
 }
 if ($row['tag'] = 'Food') {
     $tag = '<h6 class="orange-text font-weight-bold mb-3"><i class="fas fa-utensils pr-2"></i>Food</h6>';
-}if ($row['Nature'] = 'Nature') {
+}elseif ($row['tag'] = 'Nature') {
     $tag = '<h6 class="green-text font-weight-bold mb-3"><i class="fas fa-tree pr-2"></i>Nature</h6>';
-}if ($row['Photography'] = 'Photography') {
+}elseif ($row['tag'] = 'Photography') {
     $tag = '<h6 class="blue-text font-weight-bold mb-3"><i class="fas fa-camera-retro pr-2"></i></i>Photography</h6>';
 }
+
 ?>
 
 <div class="maincontainer">
@@ -32,38 +33,28 @@ if ($row['tag'] = 'Food') {
             <?php foreach ($rows as $row): ?>
             <!-- Grid row -->
             <div class="row pb-5 justify-content-center">
-
-                <!-- Grid column -->
                 <div class="col-lg-5">
-
-                    <!-- Featured image -->
-                    <div class=" rounded z-depth-2 mb-lg-0 mb-4">
+                     <div class=" rounded z-depth-2 mb-lg-0 mb-4">
                         <img class="img-fluid" src="
                     <?php echo e($row['imglink']) ?>">
                     </div>
-
-                </div>
-                <!-- Grid column -->
-
-                <!-- Grid column -->
+                </div>         
                 <div class="col-lg-3">
-
-                    <!-- Category -->
                     <?php echo $tag; ?>
                     <!-- Post title -->
-                    <h3 class="font-weight-bold mb-3"><strong><?php echo $row['title']; ?></strong></h3>
+                    <h3 class="font-weight-bold mb-3"><strong>
+                    <?php $ctitle = $row['title'];
+                    $title = str_replace('_',' ',$ctitle); echo $title ?>
+                    </strong></h3>
                     <!-- Excerpt -->
                     <p><?php echo $row['bdesc']; ?></p>
                     <!-- Post data -->
                     <p>by <a><strong><?php echo $row['creator']; ?></strong></a>, <?php echo $row['date']; ?></p>
                     <!-- Read more button -->
                     <a class="btn btn-success btn-md" href="blogtxt.php?id=<?php echo e($row['id']) ?>">Read more</a>
-
                 </div>
-                <!-- Grid column -->
-
             </div>
-            <!-- Grid row -->
+ <!-- Grid row -->
             <?php endforeach;?>
             <?php endif;?>
             <?php ?>

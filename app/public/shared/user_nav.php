@@ -8,7 +8,7 @@
     <nav class="navbar fixed-top navbar-expand-xl navbar-dark">
         <div class="container col">
             <!-- Brand -->
-            <a class="navbar-brand" href="<?php echo PAGES_ROOT; ?>/start.php"><img
+            <a class="navbar-brand" href="<?php echo PAGES_ROOT; ?>/index.php"><img
                     src="<?php echo ASSETS_ROOT; ?>/img/aurora_orange.png" height="40" alt="aurora logo" />
             </a>
             <!-- Collapse -->
@@ -23,7 +23,7 @@
                 <!-- Left -->
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item ">
-                        <a class="nav-link" href="<?php echo PAGES_ROOT?>/start.php">Aurora
+                        <a class="nav-link" href="<?php echo PAGES_ROOT?>/index.php">Aurora
                         </a>
                     </li>
                     <li class="nav-item">
