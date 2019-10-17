@@ -1,10 +1,10 @@
 # Project Aurora Marc Ruckstuhl WBD 318
 
-#### This is a project i made while studying at SAE Zurich. We had to make a small CMS for our assignment, and this is my result.
+ This is a project i made while studying at SAE Zurich. We had to make a small CMS for our assignment, and this is my result.
 
 ## Database Design
 
-#### I decided to make 2 Databases for my Project, one for the users and one for the Blog entries.
+ I decided to make 2 Databases for my Project, one for the users and one for the Blog entries.
 
 ### Users
 
@@ -25,7 +25,7 @@
 | "28" | "admin"      | "admin@admin\.com"    | "$2y$10\$dldxCvGpW3iaCL6oaPwuPeWOD06Ps40UhYI8pG7RpJxfza4wEilNO"  | "1"        | "0"       |
 | "43" | "mruckstuhl" | "ophustle@gmail\.com" | "$2y$10\$fyHKEEJt5J/f9ctXHAnBqu9/zxxRqydTuKO\.0rtaldG6IcQ81b2Qe" | "0"        | "1"       |
 
-#### This is essentially a generic table. is_admin can only be changed in the db itself and there is only one admin. The user int gets assigned as soon as someone registers. With this the user can log in an access all the features.
+ This is essentially a generic table. is_admin can only be changed in the db itself and there is only one admin. The user int gets assigned as soon as someone registers. With this the user can log in an access all the features.
 
 ### Blog
 
@@ -47,15 +47,15 @@
 | ----- | ---------- | --------- | --------------------- | ------- | ------------- | ------------------------------------------------------------------------------------------------- |
 | "144" | "About_Me" | "asdf"    | "Sun\-06\-2019 23:10" | "asdf"  | "Photography" | "https://horizon\-media\.s3\-eu\-west\-1\.amazonaws\.com/s3fs\-public/field/image/ecosystem\.jpg" |
 
-#### The Blog table works with a unique title to prevent duplicate entries. Additonally i made a date injection and a tag selection.
+ The Blog table works with a unique title to prevent duplicate entries. Additonally i made a date injection and a tag selection.
 
 ### Thoughts
 
-#### I couldn't code all the features i wanted, because i didn't have enough time after starting from scratch a couple of times, cause i wasn't happy with what i made. The table essentially had their purpose and fit the scale of my project.
+ I couldn't code all the features i wanted, because i didn't have enough time after starting from scratch a couple of times, cause i wasn't happy with what i made. The table essentially had their purpose and fit the scale of my project.
 
 ## PHP Functions
 
-#### I had some tricky Problems to tackle and i'm honestly not sure if i always took the best approach, but i guess that's part of the learning process. I'm not sure what I should write in this Section, because i explained most of my functions in my code, but i guess i can atleast add some of it here aswell.
+ I had some tricky Problems to tackle and i'm honestly not sure if i always took the best approach, but i guess that's part of the learning process. I'm not sure what I should write in this Section, because i explained most of my functions in my code, but i guess i can atleast add some of it here aswell.
 
 ```php
 if (!empty($_POST)) {
@@ -98,7 +98,7 @@ exit;
 }
 ```
 
-#### This is probably the biggest function i added. The admin can add a blogpage, if he fills out all the inputs and can add a the blog post itself into a WYSIWYG editor. If all the requirements are met, the input data gets sent to the DB and the blog itself will be saved in the articles folder. The unique title in the DB prevents duplicate posts and the str_replace function makes sure the file gets properly saved, so that it can be found by the file function.
+ This is probably the biggest function i added. The admin can add a blogpage, if he fills out all the inputs and can add a the blog post itself into a WYSIWYG editor. If all the requirements are met, the input data gets sent to the DB and the blog itself will be saved in the articles folder. The unique title in the DB prevents duplicate posts and the str_replace function makes sure the file gets properly saved, so that it can be found by the file function.
 
 ```php
 $did = $_GET['id'];
@@ -127,7 +127,7 @@ if (isset($_GET['id'])) {
 }
 ```
 
-#### Because all of my Blogpages are "genrated" through link manipulation i had to GET the corresponding page through my URL and open a file path to the generated .txt file, and display it through a foreach loop.
+ Because all of my Blogpages are "genrated" through link manipulation i had to GET the corresponding page through my URL and open a file path to the generated .txt file, and display it through a foreach loop.
 
 ```php
 $sql = "SELECT * FROM blog ORDER by date DESC ";
@@ -145,7 +145,7 @@ if ($row['tag'] = 'Food') {
 }
 ```
 
-#### This is just a quick "tag" function, that displays the correspondig tag on the webpage. Nothing fancy.
+ This is just a quick "tag" function, that displays the correspondig tag on the webpage. Nothing fancy.
 
 ```php
 foreach (glob("../pictures/" . "*.{jpg,webp,png,jpeg}", GLOB_BRACE) as $image)
@@ -161,8 +161,8 @@ foreach (glob("../pictures/" . "*.{jpg,webp,png,jpeg}", GLOB_BRACE) as $image)
 </div>';}
 ```
 
-#### I had to look all over the internet to achieve this monstrosity, which is why i wanted to include it here. Its basically just the masonry plugin / an overlay with a download button / and a foreach loop that picks the uploaded pictures from the corresponding folder.
+I had to look all over the internet to achieve this monstrosity, which is why i wanted to include it here. Its basically just the masonry plugin / an overlay with a download button / and a foreach loop that picks the uploaded pictures from the corresponding folder.
 
 ### Final Thoughts
 
-#### This was our largest assignment to date, and i wanted to make sure that i make something that i can show of and use as a "Portfolio" thingy. I know it's not that great but overall i'm pretty happy with this Project, because i learned so much. I hope i can build some more awesome Projects.
+ This was our largest assignment to date, and i wanted to make sure that i make something that i can show of and use as a "Portfolio" thingy. I know it's not that great but overall i'm pretty happy with this Project, because i learned so much. I hope i can build some more awesome Projects.
