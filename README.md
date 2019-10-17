@@ -11,7 +11,7 @@ The page is based on:
  - MySql
  - Material Bootstrap
 
-![Page](https://imgur.com/9QQR14K.gif)
+![Page](https://imgur.com/weTeiCe.gif)
 
 ## Database Design
 
