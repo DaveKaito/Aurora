@@ -10,8 +10,8 @@ The page is based on:
  - PHP 
  - MySql
  - Material Bootstrap
-
-![Page](https://imgur.com/weTeiCe.gif)
+ 
+![Page](https://imgur.com/MwzxuA4.gif)
 
 ## Database Design
 
