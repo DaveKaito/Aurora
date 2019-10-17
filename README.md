@@ -1,6 +1,17 @@
+
 # Project Aurora Marc Ruckstuhl WBD 318
 
  This is a project i made while studying at SAE Zurich. We had to make a small CMS for our assignment, and this is my result.
+
+The Page itself is something similiar to a high quality royality free image distributor like unsplash. A visitor can download the pictures he likes on the front page and a registered user can upload said pictures. The administrator can also edit and add blog entries to keep the users up to date. 
+
+#### Quick Info
+The page is based on:
+ - PHP 
+ - MySql
+ - Material Bootstrap
+
+![Page](https://imgur.com/9QQR14K.gif)
 
 ## Database Design
 
@@ -163,6 +174,8 @@ foreach (glob("../pictures/" . "*.{jpg,webp,png,jpeg}", GLOB_BRACE) as $image)
 
 I had to look all over the internet to achieve this monstrosity, which is why i wanted to include it here. Its basically just the masonry plugin / an overlay with a download button / and a foreach loop that picks the uploaded pictures from the corresponding folder.
 
-### Final Thoughts
+## Final Thoughts
+
+ This was our largest assignment to date, and i wanted to make sure that i make something that i can show of and use as a "Portfolio" thingy. I know it's not that great but overall i'm pretty happy with this Project, because i learned so much. I hope i can build some more awesome Projects.
 
  This was our largest assignment to date, and i wanted to make sure that i make something that i can show of and use as a "Portfolio" thingy. I know it's not that great but overall i'm pretty happy with this Project, because i learned so much. I hope i can build some more awesome Projects.
