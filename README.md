@@ -15,7 +15,7 @@ The page is based on:
 
 ## Database Design
 
- I decided to make 2 Databases for my Project, one for the users and one for the Blog entries.
+ I decided to make 2 Databases for my Project, one for the users and one for the blog entries.
 
 ### Users
 
@@ -62,11 +62,11 @@ The page is based on:
 
 ### Thoughts
 
- I couldn't code all the features i wanted, because i didn't have enough time after starting from scratch a couple of times, cause i wasn't happy with what i made. The table essentially had their purpose and fit the scale of my project.
+ I couldn't code all the features i wanted, because i didn't have enough time after starting from scratch a couple of times, because i wasn't happy with what i made. The table essentially fullfilled it's purpose and fit the scale of my project.
 
 ## PHP Functions
 
- I had some tricky Problems to tackle and i'm honestly not sure if i always took the best approach, but i guess that's part of the learning process. I'm not sure what I should write in this Section, because i explained most of my functions in my code, but i guess i can atleast add some of it here aswell.
+ I had some tricky problems to tackle and i'm honestly not sure if i always took the best approach, but i guess that's part of the learning process. 
 
 ```php
 if (!empty($_POST)) {
@@ -138,7 +138,7 @@ if (isset($_GET['id'])) {
 }
 ```
 
- Because all of my Blogpages are "genrated" through link manipulation i had to GET the corresponding page through my URL and open a file path to the generated .txt file, and display it through a foreach loop.
+ Because all of my blogpages are "genrated" through link manipulation i had to GET the corresponding page through my URL and open a file path to the generated .txt file, and display it through a foreach loop.
 
 ```php
 $sql = "SELECT * FROM blog ORDER by date DESC ";
@@ -177,5 +177,5 @@ I had to look all over the internet to achieve this monstrosity, which is why i 
 ## Final Thoughts
 
  This was our largest assignment to date, and i wanted to make sure that i make something that i can show of and use as a "Portfolio" thingy. I know it's not that great but overall i'm pretty happy with this Project, because i learned so much. I hope i can build some more awesome Projects.
-
- This was our largest assignment to date, and i wanted to make sure that i make something that i can show of and use as a "Portfolio" thingy. I know it's not that great but overall i'm pretty happy with this Project, because i learned so much. I hope i can build some more awesome Projects.
+ 
+ ### Thanks for checking out my project
